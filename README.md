@@ -7,6 +7,18 @@
 # 使用方法
 
 ```
+
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+  
+dependencies {
+	        implementation 'com.github.Jack1995:ZipUtil:1.0.0'
+	}
+  
 ArchiverManager.getInstance(this.application).doUnArchiver(source, destPath, "***压缩密码***", object : IArchiverCallback {
                 override fun onStartArchiver() {
                     //解压缩开始
@@ -31,3 +43,5 @@ ArchiverManager.getInstance(this.application).doUnArchiver(source, destPath, "**
 
 2018-08-03 </br>
 完成对 .zip 文件的压缩
+
+
