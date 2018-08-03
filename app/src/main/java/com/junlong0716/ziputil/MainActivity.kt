@@ -15,7 +15,7 @@ import java.io.File
 
 class MainActivity : AppCompatActivity() {
     private val source = Environment.getExternalStorageDirectory().absolutePath + File.separator + "testRar.zip"
-    private val destpath = Environment.getExternalStorageDirectory().absolutePath + File.separator + "testRar" + File.separator
+    private val destPath = Environment.getExternalStorageDirectory().absolutePath + File.separator + "testRar" + File.separator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bt_unzip.setOnClickListener {
-            ArchiverManager.getInstance(this.application).doUnArchiver(source, destpath, "", object : IArchiverCallback {
+            ArchiverManager.getInstance(this.application).doUnArchiver(source, destPath, "", object : IArchiverCallback {
                 override fun onStartArchiver() {
                     Toast.makeText(this@MainActivity, "解压缩开始", Toast.LENGTH_SHORT).show()
                 }
